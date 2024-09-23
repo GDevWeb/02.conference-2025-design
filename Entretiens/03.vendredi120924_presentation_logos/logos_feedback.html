@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>logos_feedback.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="sommaire">Sommaire</h1>
+<ul>
+<li><a href="#sommaire">Sommaire</a></li>
+<li><a href="#entretien-mercredi-11-septembre-2024">Entretien mercredi 11 septembre 2024</a>
+<ul>
+<li><a href="#personnes-pr%C3%A9sentes">Personnes présentes</a></li>
+<li><a href="#sujet">Sujet</a></li>
+<li><a href="#plaquette-pr%C3%A9sent%C3%A9e">Plaquette présentée</a></li>
+<li><a href="#s%C3%A9lection">Sélection</a></li>
+<li><a href="#retours">Retours</a>
+<ul>
+<li><a href="#logo-1">Logo 1</a></li>
+<li><a href="#logo-2">Logo 2</a></li>
+<li><a href="#logo-3">Logo 3</a></li>
+<li><a href="#logo-4">Logo 4</a></li>
+<li><a href="#logo-5">Logo 5</a></li>
+<li><a href="#logo-6">Logo 6</a></li>
+<li><a href="#logo-7">Logo 7</a></li>
+</ul>
+</li>
+<li><a href="#envoi-de-nouveaux-logos">Envoi de nouveaux logos</a></li>
+</ul>
+</li>
+<li><a href="#proposition-pour-mardi-17-septembre-2024">Proposition pour mardi 17 septembre 2024</a>
+<ul>
+<li><a href="#aper%C3%A7u">Aperçu</a></li>
+<li><a href="#logo1">Logo#1</a>
+<ul>
+<li><a href="#plaquette">Plaquette</a></li>
+<li><a href="#argumentaire-logo1">Argumentaire Logo#1</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#logo2">Logo#2</a>
+<ul>
+<li><a href="#plaquette-1">Plaquette</a></li>
+<li><a href="#argumentaire-logo2">Argumentaire Logo#2</a></li>
+<li><a href="#points-%C3%A0-am%C3%A9liorer">Points à améliorer</a></li>
+<li><a href="#conclusion-1">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#logo-3-1">Logo 3</a>
+<ul>
+<li><a href="#plaquette-2">Plaquette</a></li>
+<li><a href="#argumentaire-logo3">Argumentaire Logo#3</a></li>
+<li><a href="#conclusion-2">Conclusion</a></li>
+<li><a href="#variante">Variante</a></li>
+<li><a href="#autres-variantes">Autres variantes</a></li>
+</ul>
+</li>
+<li><a href="#logo4">Logo#4</a>
+<ul>
+<li><a href="#plaquette-3">Plaquette</a></li>
+<li><a href="#argumentaire-logo4">Argumentaire Logo#4</a></li>
+<li><a href="#conclusion-3">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#logo5">Logo#5</a>
+<ul>
+<li><a href="#plaquette-4">Plaquette</a></li>
+<li><a href="#argumentaire-logo5">Argumentaire Logo#5</a></li>
+<li><a href="#conclusion-4">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#logo6">Logo#6</a>
+<ul>
+<li><a href="#plaquette-5">Plaquette</a></li>
+<li><a href="#argumentaire-logo6">Argumentaire Logo#6</a></li>
+</ul>
+</li>
+<li><a href="#logo7">Logo#7</a>
+<ul>
+<li><a href="#plaquette-6">Plaquette</a></li>
+<li><a href="#argumentaire-logo7">Argumentaire Logo#7</a></li>
+</ul>
+</li>
+<li><a href="#logo-8">Logo 8</a>
+<ul>
+<li><a href="#plaquette-7">Plaquette</a></li>
+<li><a href="#argumentaire-logo8">Argumentaire Logo#8</a></li>
+<li><a href="#conclusion-5">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="entretien-mercredi-11-septembre-2024">Entretien mercredi 11 septembre 2024</h1>
+<h2 id="personnes-pr%C3%A9sentes">Personnes présentes</h2>
+<ol>
+<li>Madame Catteau</li>
+<li>Madame Brigitte</li>
+<li>Moi-même</li>
+</ol>
+<h2 id="sujet">Sujet</h2>
+<p>Délibération à propos des logos</p>
+<h2 id="plaquette-pr%C3%A9sent%C3%A9e">Plaquette présentée</h2>
+<div style="text-align:center">
+<img src="img/plaquette_logos_v1.png" >
+</div>
+<h2 id="s%C3%A9lection">Sélection</h2>
+<div style="text-align:center">
+<img src="img/logos_plaquette_selection.png" >
+</div>
+<h2 id="retours">Retours</h2>
+<h3 id="logo-1">Logo 1</h3>
+<ol>
+<li>Supprimer le bâtiment de type tribunal en premier plan.</li>
+<li>Remplacer l’obélisque par la colonne de la déesse.</li>
+</ol>
+<h3 id="logo-2">Logo 2</h3>
+<ul>
+<li>Trop chargé selon mes tutrices, mais tout de même à présenter auprès du président et vice-président.</li>
+</ul>
+<h3 id="logo-3">Logo 3</h3>
+<ul>
+<li>La vague casse un peu la mise en scène, voir pour la réduire ou la supprimer.</li>
+</ul>
+<h3 id="logo-4">Logo 4</h3>
+<ul>
+<li>Ajout de la mention :
+<ul>
+<li>&quot;Lille 2025&quot;</li>
+<li>&quot;Conférence des présidents&quot;</li>
+</ul>
+</li>
+</ul>
+<h3 id="logo-5">Logo 5</h3>
+<ul>
+<li>Ajout des textes &quot;Lille 2025&quot; et &quot;Conférence des présidents&quot;.</li>
+</ul>
+<h3 id="logo-6">Logo 6</h3>
+<ul>
+<li>Peut être apprécié, à soumettre auprès du président et vice-président.</li>
+</ul>
+<h3 id="logo-7">Logo 7</h3>
+<ul>
+<li>Ajouter des éléments graphiques qui rappellent la République française.</li>
+</ul>
+<h2 id="envoi-de-nouveaux-logos">Envoi de nouveaux logos</h2>
+<p>Création de nouveaux logos :</p>
+<ul>
+<li>Au style minimaliste et moderne.</li>
+<li>Au style plus élaboré.</li>
+<li>Création de plusieurs logos contenant :
+<ul>
+<li>Les couleurs des Flandres (jaune, noir et rouge).</li>
+<li>Des bâtiments et monuments typiques de Lille.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="proposition-pour-mardi-17-septembre-2024">Proposition pour mardi 17 septembre 2024</h1>
+<h3 id="aper%C3%A7u">Aperçu</h3>
+<div style="text-align:center">
+<img src="img/overview/overview_150924.png" >
+</div>
+<hr>
+<h2 id="logo1">Logo#1</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo1/frame_logo1.png" >
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo1/plaquettes/frame_logo1.png" >
+</div>
+<hr>
+<h3 id="argumentaire-logo1">Argumentaire Logo#1</h3>
+<ol>
+<li>
+<p><strong>Représentation visuelle de Lille et de son patrimoine</strong></p>
+<ul>
+<li>Le logo met en valeur les <strong>éléments architecturaux emblématiques de Lille</strong>, symbolisant l'héritage historique et l'importance de la ville.</li>
+<li>La statue intégrée au centre joue un rôle essentiel, renforçant l'identité visuelle du projet.</li>
+</ul>
+</li>
+<li>
+<p><strong>Modernité et sobriété dans le style graphique</strong></p>
+<ul>
+<li>Style graphique <strong>moderne et minimaliste</strong>, créant un équilibre entre tradition et modernité.</li>
+<li>Adaptable sur différents supports : cartes de visite, bannières, affiches, supports numériques.</li>
+</ul>
+</li>
+<li>
+<p><strong>Palette de couleurs bien pensée</strong></p>
+<ul>
+<li>Utilisation des couleurs bleu, blanc et rouge, évoquant la France tout en symbolisant les Hauts-de-France.</li>
+<li>Excellente lisibilité et cohérence visuelle avec des contrastes marqués.</li>
+</ul>
+</li>
+<li>
+<p><strong>Typographie moderne et accessible</strong></p>
+<ul>
+<li>La <strong>typographie claire et moderne</strong> permet une lecture fluide des informations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Personnalisation et adaptabilité</strong></p>
+<ul>
+<li>Versions dérivées permettant une flexibilité selon les contextes d'utilisation, tout en maintenant la cohérence visuelle.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cohérence avec l'événement &quot;Conférence des Présidents&quot;</strong></p>
+<ul>
+<li>Style sérieux et professionnel, en adéquation avec l'image attendue de l'événement.</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>Ce logo capture <strong>l'essence de Lille</strong> tout en restant <strong>professionnel et élégant</strong>, et s'adapte à tous types de supports.</p>
+<hr>
+<h2 id="logo2">Logo#2</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo2/old/frame_logo_hdf_unity2.png" >
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo2/plaquettes/plaquette_logo_hdf_unity2.png" >
+</div>
+<hr>
+<h3 id="argumentaire-logo2">Argumentaire Logo#2</h3>
+<ol>
+<li>
+<p><strong>Représentation visuelle complète de Lille</strong></p>
+<ul>
+<li>Mises en scène de <strong>bâtiments emblématiques</strong> de Lille, capturant le patrimoine architectural de la ville.</li>
+<li><strong>Couleurs bleu, blanc, rouge</strong> renforçant l'ancrage national.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ambition visuelle et style détaillé</strong></p>
+<ul>
+<li>Style très détaillé reflétant la richesse de l'architecture lilloise.</li>
+</ul>
+</li>
+<li>
+<p><strong>Symbolique de l'événement</strong></p>
+<ul>
+<li>Texte &quot;LILLE 2025 - Conférence des Présidents&quot; bien positionné et lisible.</li>
+</ul>
+</li>
+</ol>
+<h3 id="points-%C3%A0-am%C3%A9liorer">Points à améliorer</h3>
+<ol>
+<li>
+<p><strong>Surcharge visuelle</strong></p>
+<ul>
+<li>Possibilité de simplifier certains éléments pour alléger la composition.</li>
+</ul>
+</li>
+<li>
+<p><strong>Renforcement du lien avec les Hauts-de-France</strong></p>
+<ul>
+<li>Intégration de symboles plus larges ou de couleurs régionales pour une approche plus régionale.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lisibilité et simplicité</strong></p>
+<ul>
+<li>Simplifier la composition pour une meilleure lisibilité sur petits supports.</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>Le logo représente bien Lille, mais <strong>gagnerait en lisibilité et simplicité</strong> avec quelques ajustements.</p>
+<hr>
+<h2 id="logo-3">Logo 3</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo3/new/logo3_v2.png" >
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo3/plaquettes/plaquette_new_logo3_v2.png" >
+</div>
+<hr>
+<h3 id="argumentaire-logo3">Argumentaire Logo#3</h3>
+<ol>
+<li>
+<p><strong>Représentation iconique et symbolique de Lille</strong></p>
+<ul>
+<li>Mise en avant de <strong>symboles forts</strong> de Lille, tels que la statue de la déesse et le beffroi de la Chambre de Commerce.</li>
+</ul>
+</li>
+<li>
+<p><strong>Intégration des couleurs des Flandres</strong></p>
+<ul>
+<li>Subtiles touches de rouge et doré rappelant les <strong>couleurs emblématiques des Flandres</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Design moderne et élégant</strong></p>
+<ul>
+<li>Formes épurées et <strong>ombres douces</strong>, créant une impression de modernité.</li>
+</ul>
+</li>
+<li>
+<p><strong>Texte bien intégré et lisible</strong></p>
+<ul>
+<li>Espacement et taille de police garantissant une bonne lisibilité.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adaptabilité et optimisation du fond jaune</strong></p>
+<ul>
+<li>Possibilité d'ajuster le fond jaune pour une meilleure lisibilité sur le web.</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>Ce logo combine <strong>symbolisme régional</strong> et <strong>élégance</strong>, avec une option d'ajustement pour une meilleure optimisation web.</p>
+<hr>
+<h3 id="variante">Variante</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo3/new/new_logo3_v2_bg_white.png">
+</div>
+<hr>
+<h3 id="autres-variantes">Autres variantes</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo3/variants/new_logo3_variants_RF.png">
+</div>
+<hr>
+<h2 id="logo4">Logo#4</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo4/new/logo4.png">
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo4/plaquettes/frame_logo_hdf4.png">
+</div>
+<div style="text-align:center">
+<img src="img/propositions/logo4/plaquettes/frame_logo_hdf4.png">
+</div>
+<hr>
+<h3 id="argumentaire-logo4">Argumentaire Logo#4</h3>
+<ol>
+<li>
+<p><strong>Une mise en valeur architecturale de Lille</strong></p>
+<ul>
+<li>Le beffroi de la Chambre de Commerce est mis en avant pour illustrer l’ancrage régional de l'événement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fluidité et modernité grâce aux vagues</strong></p>
+<ul>
+<li>Les vagues en bas introduisent un mouvement fluide, symbolisant les rivières et les échanges lors de la conférence.</li>
+</ul>
+</li>
+<li>
+<p><strong>Couleurs sobres et élégantes</strong></p>
+<ul>
+<li>Fond gris-bleu et détails en blanc assurent une élégance professionnelle.</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>Le logo allie <strong>tradition</strong> et <strong>modernité</strong>, en parfaite adéquation avec l’événement.</p>
+<hr>
+<h2 id="logo5">Logo#5</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo5/new/frame_logo_hdf5.png">
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo5/plaquette/plaquette_logo_hdf5.png">
+</div>
+<hr>
+<h3 id="argumentaire-logo5">Argumentaire Logo#5</h3>
+<ol>
+<li>
+<p><strong>Représentation architecturale forte</strong></p>
+<ul>
+<li>Mise en avant du beffroi et de bâtiments emblématiques de Lille.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vague subtile et symbolique</strong></p>
+<ul>
+<li>La vague symbolise le mouvement et les échanges entre participants.</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion">Conclusion</h3>
+<p>Un équilibre entre <strong>histoire et modernité</strong>, avec un fort ancrage régional et une lisibilité améliorée.</p>
+<hr>
+<h2 id="logo6">Logo#6</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo6/new/frame_logo6.png">
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo6/plaquette/plaquette_logo_hdf6.png">
+</div>
+<hr>
+<h3 id="argumentaire-logo6">Argumentaire Logo#6</h3>
+<ol>
+<li>
+<p><strong>Représentation iconique de Lille</strong></p>
+<ul>
+<li>Le beffroi et les bâtiments sont au centre, soulignant le patrimoine culturel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Utilisation des couleurs régionales</strong></p>
+<ul>
+<li>Les couleurs bleu, blanc et rouge évoquent à la fois la France et la région.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="logo7">Logo#7</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo7/new/frame_logo_minimalist7_new.png">
+</div>
+<hr>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo7/plaquette/plaquette_logo_minimalist7_new.png">
+</div>
+<hr>
+<h3 id="argumentaire-logo7">Argumentaire Logo#7</h3>
+<ol>
+<li>
+<p><strong>Un design minimaliste et moderne</strong></p>
+<ul>
+<li>Le tracé simple et épuré du beffroi de Lille le rend reconnaissable et adaptable à tous les formats.</li>
+</ul>
+</li>
+<li>
+<p><strong>Intégration subtile des couleurs tricolores</strong></p>
+<ul>
+<li>Les couleurs bleu, blanc et rouge dans le texte &quot;Lille - Juin 2025&quot; rappellent discrètement le drapeau français.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="logo-8">Logo 8</h2>
+<div style="text-align:center">
+<img src="img/propositions/logo8/new/logo_la_deesse_v2_en_cours.png">
+</div>
+<h3 id="plaquette">Plaquette</h3>
+<div style="text-align:center">
+<img src="img/propositions/logo8/plaquette/plaquette_la_deesse_v2.png">
+</div>
+<h3 id="argumentaire-logo8">Argumentaire Logo#8</h3>
+<ol>
+<li>
+<p><strong>Un design symbolique et épuré</strong></p>
+<ul>
+<li>Ce logo représente la <strong>statue de la déesse</strong> de Lille, un monument emblématique, placé au sommet d'une colonne colorée en bleu, blanc et rouge, rappelant les couleurs du drapeau français. La colonne elle-même est un symbole de force et de stabilité, des qualités en lien direct avec la stature de l'événement.</li>
+<li>La simplicité de ce design permet de capturer l'essence de Lille tout en restant facilement reconnaissable et mémorable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Couleurs et symbolisme régional</strong></p>
+<ul>
+<li>Les <strong>marches jaunes et rouges</strong> au bas de la colonne font référence aux <strong>Flandres</strong>, renforçant l'identité régionale de Lille tout en ajoutant une dimension visuelle forte.</li>
+<li>L’utilisation des couleurs du drapeau français dans la colonne centrale permet d’ancrer l’événement dans son contexte national, tout en étant un hommage subtil à l’identité française.</li>
+</ul>
+</li>
+<li>
+<p><strong>Un logo polyvalent et percutant</strong></p>
+<ul>
+<li>Grâce à sa composition minimaliste et bien structurée, ce logo est parfaitement <strong>adaptable à différents formats</strong>. Il fonctionnera aussi bien sur des supports physiques (bannières, badges, brochures) que numériques (sites web, réseaux sociaux).</li>
+<li>La lisibilité du texte &quot;Lille Juin 2025 - Conférence des Présidents&quot; est optimisée pour garantir une lecture fluide même à plus petite échelle. Le choix de la typographie en gras, en particulier pour le nom de l’événement, souligne l’importance et le prestige de celui-ci.</li>
+</ul>
+</li>
+<li>
+<p><strong>Équilibre entre tradition et modernité</strong></p>
+<ul>
+<li>Ce design minimaliste parvient à combiner des éléments de <strong>tradition</strong> (la statue, les couleurs nationales et régionales) avec une <strong>approche moderne</strong> (style épuré, simplicité des formes). Cet équilibre est essentiel pour représenter un événement aussi important que la Conférence des Présidents.</li>
+<li>Le cercle clair en arrière-plan agit comme un point focal subtil, ajoutant de la profondeur au logo sans surcharger le design.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adaptation visuelle cohérente et professionnelle</strong></p>
+<ul>
+<li>Ce logo assure une <strong>cohérence visuelle</strong> qui s’intègre parfaitement dans l’identité visuelle globale de l’événement. Il envoie un message clair d’unité, de force et de professionnalisme, qualités attendues pour un événement de ce calibre.</li>
+<li>La disposition symétrique des éléments assure une bonne lisibilité et une compréhension immédiate de l’objet du logo, peu importe où il sera utilisé.</li>
+</ul>
+</li>
+<li>
+<p><strong>Facilité de reconnaissance et de mémorisation</strong></p>
+<ul>
+<li>L'iconographie de la <strong>statue de la déesse</strong>, en lien direct avec Lille, permettra aux participants de reconnaître immédiatement l’ancrage local de l’événement. Les éléments de couleur et la simplicité du design facilitent sa mémorisation, un critère essentiel pour renforcer la notoriété de la Conférence des Présidents.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>Ce logo répond parfaitement aux exigences d’un événement national en mêlant symbolisme, simplicité et efficacité visuelle. Il incarne l’esprit de Lille tout en respectant les codes professionnels et institutionnels de la <strong>Conférence des Présidents</strong>. Son impact visuel, sa flexibilité d’utilisation et son message clair le rendent idéal pour représenter l’événement sur tous les supports, des plus formels aux plus informels.</p>
+<hr>
+
+</body>
+</html>

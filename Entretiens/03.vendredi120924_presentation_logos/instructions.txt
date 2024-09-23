@@ -1,0 +1,15 @@
+### Instructions pour ouvrir le fichier `index.html`
+
+1. **Localisez le fichier** : Assurez-vous que le fichier HTML (ex: `fichier.html`) est bien enregistré sur votre ordinateur.
+   
+2. **Double-cliquez sur le fichier** : Une fois localisé, double-cliquez simplement sur le fichier. Cela ouvrira automatiquement le fichier dans votre navigateur web par défaut (comme Chrome, Firefox, Edge ou Safari).
+
+3. **Alternative manuelle** : 
+   - Si le fichier ne s'ouvre pas automatiquement, faites un **clic droit** sur le fichier.
+   - Sélectionnez **Ouvrir avec** et choisissez votre navigateur préféré (ex: Google Chrome, Mozilla Firefox).
+
+4. **Visualisez le contenu** : Le fichier s'affichera dans le navigateur avec toutes les images et la mise en page correctement affichées.
+
+---
+
+Cette version est simple et adaptée pour toute personne, même sans grandes compétences techniques.
